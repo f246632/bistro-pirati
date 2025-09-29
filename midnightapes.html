@@ -392,6 +392,39 @@
             box-shadow: 0 15px 35px rgba(255, 140, 0, 0.4);
         }
 
+        /* Mobile Social Buttons for MidnightApes */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-social {
+            display: none;
+            gap: 0.5rem;
+        }
+
+        .mobile-social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 140, 0, 0.1);
+            border: 2px solid var(--primary-orange);
+            border-radius: 50%;
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-social-btn:hover {
+            background: var(--primary-orange);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-container {
@@ -405,6 +438,10 @@
             .back-btn {
                 padding: 0.5rem 1rem;
                 font-size: 0.9rem;
+            }
+
+            .mobile-social {
+                display: flex;
             }
 
             .cta-buttons {
@@ -427,9 +464,19 @@
             <a href="index.html" class="logo">
                 🌙🦧 MidnightApes
             </a>
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i> Nazad na Bistro
-            </a>
+            <div class="nav-actions">
+                <div class="mobile-social">
+                    <a href="https://www.facebook.com/p/Bistro-Pirati-61553933404279/" target="_blank" class="mobile-social-btn">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/konoba_pirati/" target="_blank" class="mobile-social-btn">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Nazad
+                </a>
+            </div>
         </div>
     </header>
 
