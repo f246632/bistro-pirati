@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add scroll transition to navbar
     navbar.style.transition = 'transform 0.3s ease-in-out, box-shadow 0.3s ease';
 
-    // Pirate treasure animation on scroll
+    // Optimized scroll animations - reduced performance impact
     function animateOnScroll() {
         const elements = document.querySelectorAll('.pizza-card, .feature-card, .info-card, .menu-category');
 
@@ -129,39 +129,40 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0) scale(1)';
+                    entry.target.style.transform = 'translateY(0)';
 
-                    // Add special pirate entrance effect
-                    entry.target.style.animation = 'pirateEnter 0.8s ease-out';
+                    // Simplified entrance effect to prevent overlapping
+                    entry.target.classList.add('animate-in');
                 }
             });
         }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -30px 0px'
         });
 
-        elements.forEach(element => {
+        elements.forEach((element, index) => {
             element.style.opacity = '0';
-            element.style.transform = 'translateY(30px) scale(0.95)';
-            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
             observer.observe(element);
         });
     }
 
-    // Add pirate entrance animation CSS
+    // Add optimized CSS animations
     const style = document.createElement('style');
     style.textContent = `
-        @keyframes pirateEnter {
+        .animate-in {
+            animation: smoothEnter 0.5s ease-out forwards;
+        }
+
+        @keyframes smoothEnter {
             0% {
                 opacity: 0;
-                transform: translateY(30px) scale(0.95) rotateX(10deg);
-            }
-            50% {
-                transform: translateY(-5px) scale(1.02) rotateX(0deg);
+                transform: translateY(20px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1) rotateX(0deg);
+                transform: translateY(0);
             }
         }
 
@@ -191,9 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
         "Avast ye! Premium sastojci iz cijele Europe! 💰"
     ];
 
-    // Show random pirate quote
+    // Optimized pirate quotes - reduced frequency to prevent spam
     function showPirateQuote() {
-        if (Math.random() < 0.3) { // 30% chance on scroll
+        if (Math.random() < 0.2) { // Reduced to 20% chance
             const randomQuote = pirateQuotes[Math.floor(Math.random() * pirateQuotes.length)];
 
             const quotePopup = document.createElement('div');
@@ -213,29 +214,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 font-weight: 600;
                 border: 2px solid var(--rum-brown);
                 opacity: 0;
-                transform: translateY(50px) scale(0.8);
-                transition: all 0.5s ease;
+                transform: translateY(30px);
+                transition: all 0.4s ease;
                 font-family: 'Rum Raisin', cursive;
             `;
 
             document.body.appendChild(quotePopup);
 
-            // Animate in
-            setTimeout(() => {
+            // Simplified animation
+            requestAnimationFrame(() => {
                 quotePopup.style.opacity = '1';
-                quotePopup.style.transform = 'translateY(0) scale(1)';
-            }, 100);
+                quotePopup.style.transform = 'translateY(0)';
+            });
 
-            // Animate out after 4 seconds
+            // Remove after 3 seconds
             setTimeout(() => {
                 quotePopup.style.opacity = '0';
-                quotePopup.style.transform = 'translateY(50px) scale(0.8)';
+                quotePopup.style.transform = 'translateY(30px)';
                 setTimeout(() => {
                     if (quotePopup.parentNode) {
                         quotePopup.parentNode.removeChild(quotePopup);
                     }
-                }, 500);
-            }, 4000);
+                }, 400);
+            }, 3000);
         }
     }
 

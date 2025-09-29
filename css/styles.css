@@ -726,7 +726,7 @@ section {
 
 /* Crypto Section */
 .crypto-section {
-    background: linear-gradient(135deg, var(--treasure-copper) 0%, var(--pirate-gold) 100%);
+    background: linear-gradient(135deg, var(--treasure-copper) 0%, var(--pirate-gold) 50%, #FF8C00 100%);
     color: var(--pirate-black);
 }
 
@@ -830,6 +830,217 @@ section {
     border-radius: 20px;
     font-size: 0.9rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* MidnightApes NFT Section */
+.nft-section {
+    margin-top: 3rem;
+}
+
+.midnight-apes-card {
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6347 100%);
+    color: var(--skull-white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 3px solid #FF4500;
+    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.midnight-apes-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: midnightGlow 3s ease-in-out infinite;
+}
+
+.midnight-apes-card h3 {
+    color: var(--skull-white);
+    font-family: 'Pirata One', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.midnight-apes-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+}
+
+.nft-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.nft-feature {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 4px solid var(--skull-white);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    text-align: center;
+}
+
+.midnight-apes-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--pirate-black), #2d1810);
+    color: #FF8C00;
+    padding: 1.2rem 2rem;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid #FF8C00;
+    position: relative;
+    z-index: 2;
+}
+
+.midnight-apes-btn:hover {
+    background: linear-gradient(135deg, #FF8C00, #FF6347);
+    color: var(--skull-white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.5);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    animation: rocketLaunch 2s ease-in-out infinite;
+}
+
+.nft-contact {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.midnight-apes-promo {
+    background: linear-gradient(135deg, #FF4500 0%, #FF8C00 100%);
+    color: var(--skull-white);
+    padding: 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 3rem;
+    border: 3px solid #FF6347;
+    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.midnight-apes-promo::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: promoShine 4s ease-in-out infinite;
+}
+
+.midnight-apes-promo h3 {
+    font-family: 'Pirata One', cursive;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.midnight-apes-promo p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+}
+
+.promo-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.promo-features span {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.promo-features span:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--skull-white);
+    transform: translateY(-2px);
+}
+
+/* MidnightApes Animations */
+@keyframes midnightGlow {
+    0%, 100% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+        opacity: 0.1;
+    }
+}
+
+@keyframes rocketLaunch {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes promoShine {
+    0%, 100% {
+        transform: rotate(0deg);
+        opacity: 0.2;
+    }
+    50% {
+        transform: rotate(180deg);
+        opacity: 0.05;
+    }
 }
 
 /* Location Section */
@@ -1243,6 +1454,21 @@ section {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .midnight-apes-card,
+    .midnight-apes-promo {
+        padding: 2rem;
+    }
+
+    .promo-features {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .promo-features span {
+        text-align: center;
+        padding: 0.6rem 1rem;
     }
 
     .footer-content {
