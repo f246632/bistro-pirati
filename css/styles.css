@@ -117,28 +117,35 @@ body {
 
 .mobile-social {
     display: none;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .mobile-social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 215, 0, 0.1);
-    border: 2px solid var(--pirate-gold);
-    border-radius: 50%;
-    color: var(--pirate-gold);
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    color: white;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+.mobile-social-btn[href*="facebook"] {
+    background: linear-gradient(135deg, #1877F2 0%, #42A5F5 100%);
+}
+
+.mobile-social-btn[href*="instagram"] {
+    background: linear-gradient(135deg, #E4405F 0%, #C13584 50%, #833AB4 100%);
 }
 
 .mobile-social-btn:hover {
-    background: var(--pirate-gold);
-    color: var(--pirate-black);
-    transform: scale(1.1);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .nav-toggle {
