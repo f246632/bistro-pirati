@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Random pirate quotes that appear
     const pirateQuotes = [
-        "Ahoy! Najbolje BIGA pizze u Jadranu! 🏴‍☠️",
+        "Ahoy! Najbolje pizze u ovom dijelu Europe! 🏴‍☠️",
         "Yo ho ho! Franko pravi čaroliju s tijestom! ⚓",
         "Batten down the hatches - Edward Blackbeard pizza je stigla! 🍕",
         "Crypto friendly kao što pirat treba! ⚡",
@@ -365,6 +365,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(treasureStyle);
 
     console.log('🏴‍☠️ Ahoy! Dobrodošli u Bistro Pirati! ⚓');
-    console.log('🍕 Franko pravi najbolje BIGA pizze u Jadranu!');
+    console.log('🍕 Franko pravi najbolje pizze u ovom dijelu Europe!');
     console.log('⚡ Crypto friendly piratska destinacija!');
 });
