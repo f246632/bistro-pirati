@@ -1,0 +1,1315 @@
+/* Bistro Pirati - Piratski Website Design 🏴‍☠️ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pirate-red: #8B0000;
+    --pirate-black: #1a1a1a;
+    --pirate-gold: #FFD700;
+    --pirate-bronze: #CD7F32;
+    --ocean-blue: #1e3a8a;
+    --ocean-dark: #0f172a;
+    --rum-brown: #8B4513;
+    --skull-white: #F8F8FF;
+    --treasure-copper: #B87333;
+    --sea-foam: #20B2AA;
+    --blood-red: #DC143C;
+    --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    line-height: 1.6;
+    color: var(--pirate-black);
+    background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-blue) 100%);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation - Pirate Ship Style */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--pirate-black) 0%, var(--rum-brown) 100%);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-dark);
+    border-bottom: 3px solid var(--pirate-gold);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+}
+
+.nav-brand h1 {
+    color: var(--pirate-gold);
+    font-family: 'Pirata One', cursive;
+    font-size: 2rem;
+    margin: 0;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    animation: treasureGlow 2s ease-in-out infinite;
+}
+
+.pirate-flag {
+    font-size: 1.5em;
+    margin-right: 0.3rem;
+    animation: flagWave 3s ease-in-out infinite;
+}
+
+.nav-subtitle {
+    color: var(--skull-white);
+    font-family: 'Rum Raisin', cursive;
+    font-size: 0.8rem;
+    opacity: 0.9;
+    letter-spacing: 0.1rem;
+    margin-top: 0.2rem;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--skull-white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-family: 'Cinzel', serif;
+}
+
+.nav-menu a:hover {
+    color: var(--pirate-gold);
+    background: rgba(255, 215, 0, 0.1);
+    border-color: var(--pirate-gold);
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px var(--pirate-gold);
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--pirate-gold);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section - Pirate Ship Deck */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--pirate-red) 50%, var(--pirate-black) 100%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a1a1a" width="1200" height="600"/><circle fill="%23FFD700" cx="200" cy="150" r="80" opacity="0.1"/><circle fill="%23DC143C" cx="800" cy="300" r="120" opacity="0.08"/><circle fill="%23FFD700" cx="1000" cy="450" r="90" opacity="0.12"/><path fill="%238B0000" d="M0,400 Q300,300 600,350 T1200,400 L1200,600 L0,600 Z" opacity="0.3"/></svg>') no-repeat center center;
+    background-size: cover;
+}
+
+.pirate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(26, 26, 26, 0.3), rgba(139, 0, 0, 0.2));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-title {
+    font-family: 'Pirata One', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--skull-white);
+    margin-bottom: 1rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+}
+
+.highlight {
+    color: var(--pirate-gold);
+    display: block;
+    font-size: 4.5rem;
+    animation: treasureGlow 3s ease-in-out infinite;
+}
+
+.skull-accent {
+    font-size: 0.8em;
+    animation: skullBob 2s ease-in-out infinite;
+}
+
+.hero-subtitle {
+    font-family: 'Rum Raisin', cursive;
+    font-size: 1.5rem;
+    color: var(--skull-white);
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--skull-white);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--pirate-gold), var(--treasure-copper));
+    color: var(--pirate-black);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+    border: 2px solid var(--pirate-gold);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--treasure-copper), var(--pirate-gold));
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--skull-white);
+    border: 2px solid var(--skull-white);
+}
+
+.btn-secondary:hover {
+    background: var(--skull-white);
+    color: var(--pirate-black);
+    transform: translateY(-3px);
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--pirate-gold);
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.feature-card h3 {
+    color: var(--skull-white);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.feature-card p {
+    color: var(--skull-white);
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+/* Section Styling */
+section {
+    padding: 6rem 0;
+}
+
+.section-badge {
+    background: linear-gradient(135deg, var(--pirate-gold), var(--treasure-copper));
+    color: var(--pirate-black);
+    padding: 0.7rem 2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3.5rem;
+    color: var(--skull-white);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.section-header p {
+    font-size: 1.3rem;
+    color: var(--skull-white);
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* About Section - Treasure Map Style */
+.about-section {
+    background: linear-gradient(135deg, var(--rum-brown) 0%, var(--treasure-copper) 100%);
+    color: var(--skull-white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text h2 {
+    font-family: 'Pirata One', cursive;
+    font-size: 3rem;
+    color: var(--pirate-gold);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.treasure-accent {
+    animation: treasureGlow 2s ease-in-out infinite;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--skull-white);
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.highlight {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--pirate-gold);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.highlight h4 {
+    color: var(--pirate-gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.highlight p {
+    color: var(--skull-white);
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.about-visual {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 3px solid var(--pirate-gold);
+    box-shadow: var(--shadow-dark);
+}
+
+.pirate-info h3 {
+    color: var(--pirate-gold);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: 'Pirata One', cursive;
+}
+
+.pirate-fact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.pirate-fact i {
+    font-size: 1.8rem;
+    color: var(--pirate-gold);
+    width: 40px;
+}
+
+.pirate-fact h4 {
+    color: var(--skull-white);
+    margin-bottom: 0.3rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.pirate-fact p {
+    color: var(--skull-white);
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Pizza Section - Fire & Gold */
+.pizza-section {
+    background: linear-gradient(135deg, var(--pirate-red) 0%, var(--blood-red) 100%);
+    color: var(--skull-white);
+}
+
+.pizza-spotlight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.pizza-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    border: 3px solid var(--pirate-gold);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pizza-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+    animation: treasureShine 4s ease-in-out infinite;
+}
+
+.pizza-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+    border-color: var(--skull-white);
+}
+
+.pizza-card.featured {
+    border-color: var(--pirate-gold);
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.pizza-card.extreme {
+    border-color: var(--blood-red);
+    background: rgba(220, 20, 60, 0.1);
+}
+
+.pizza-card.luxury {
+    border-color: var(--treasure-copper);
+    background: rgba(184, 115, 51, 0.1);
+}
+
+.pizza-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pizzaSpin 3s ease-in-out infinite;
+}
+
+.pizza-card h3 {
+    color: var(--pirate-gold);
+    font-family: 'Pirata One', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.pizza-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.pizza-ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.pizza-ingredients span {
+    background: rgba(255, 215, 0, 0.2);
+    color: var(--pirate-gold);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.pizza-warning {
+    background: rgba(220, 20, 60, 0.2);
+    border: 2px solid var(--blood-red);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.pizza-warning i {
+    color: var(--blood-red);
+    font-size: 1.2rem;
+}
+
+.pizza-luxury {
+    background: rgba(184, 115, 51, 0.2);
+    border: 2px solid var(--treasure-copper);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.pizza-luxury i {
+    color: var(--treasure-copper);
+    font-size: 1.2rem;
+}
+
+.pizza-price {
+    background: var(--pirate-gold);
+    color: var(--pirate-black);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.biga-explanation {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    border: 2px solid var(--pirate-gold);
+}
+
+.biga-explanation h3 {
+    color: var(--pirate-gold);
+    font-family: 'Pirata One', cursive;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.biga-explanation p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+/* Menu Section */
+.menu-section {
+    background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean-blue) 100%);
+    color: var(--skull-white);
+}
+
+.menu-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.menu-category {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.menu-category:hover {
+    transform: translateY(-5px);
+    border-color: var(--pirate-gold);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.category-icon {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    animation: menuBob 2s ease-in-out infinite;
+}
+
+.menu-category h3 {
+    color: var(--pirate-gold);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-family: 'Pirata One', cursive;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: translateX(5px);
+    border-radius: 8px;
+    padding-left: 1rem;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item h4 {
+    color: var(--skull-white);
+    font-size: 1.2rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 0.2rem;
+}
+
+.category-note {
+    text-align: center;
+    font-style: italic;
+    color: var(--pirate-gold);
+    margin-top: 1rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.opening-hours {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    border: 2px solid var(--pirate-gold);
+}
+
+.opening-hours h3 {
+    color: var(--pirate-gold);
+    font-family: 'Pirata One', cursive;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.hours-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hours-item .day {
+    color: var(--pirate-gold);
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+
+.hours-item .time {
+    color: var(--skull-white);
+    font-family: 'Rum Raisin', cursive;
+    font-size: 1.1rem;
+}
+
+/* Crypto Section */
+.crypto-section {
+    background: linear-gradient(135deg, var(--treasure-copper) 0%, var(--pirate-gold) 100%);
+    color: var(--pirate-black);
+}
+
+.crypto-section .section-header h2,
+.crypto-section .section-header p {
+    color: var(--pirate-black);
+}
+
+.crypto-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.crypto-info h3 {
+    color: var(--pirate-black);
+    font-family: 'Pirata One', cursive;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.crypto-info p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.crypto-benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.crypto-benefit {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--pirate-black);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.crypto-benefit i {
+    font-size: 2rem;
+    color: var(--pirate-black);
+    width: 50px;
+}
+
+.crypto-benefit h4 {
+    color: var(--pirate-black);
+    margin-bottom: 0.3rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.crypto-benefit p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.crypto-card {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid var(--pirate-black);
+}
+
+.crypto-card h3 {
+    color: var(--pirate-black);
+    font-family: 'Pirata One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.crypto-note {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--pirate-black);
+}
+
+.traditional-payments h4 {
+    color: var(--pirate-black);
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.payment-icons span {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Location Section */
+.location-section {
+    background: linear-gradient(135deg, var(--rum-brown) 0%, var(--pirate-black) 100%);
+    color: var(--skull-white);
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.location-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--pirate-gold);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.info-card i {
+    font-size: 3rem;
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+}
+
+.info-card h3 {
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.info-card p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.location-map {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 2px solid var(--pirate-gold);
+    text-align: center;
+    height: fit-content;
+}
+
+.map-placeholder i {
+    font-size: 5rem;
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+}
+
+.map-placeholder h3 {
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-family: 'Pirata One', cursive;
+}
+
+.coordinates h4 {
+    color: var(--pirate-gold);
+    margin: 2rem 0 1rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--pirate-red) 100%);
+    color: var(--skull-white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+.contact-form {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid var(--pirate-gold);
+}
+
+.contact-form h3 {
+    color: var(--pirate-gold);
+    font-family: 'Pirata One', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--pirate-gold);
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--skull-white);
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--pirate-gold);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, var(--pirate-gold), var(--treasure-copper));
+    color: var(--pirate-black);
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, var(--treasure-copper), var(--pirate-gold));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.social-info {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--pirate-gold);
+    height: fit-content;
+}
+
+.social-info h3 {
+    color: var(--pirate-gold);
+    font-family: 'Pirata One', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    color: var(--skull-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: var(--pirate-gold);
+    transform: translateY(-2px);
+}
+
+.social-link i {
+    font-size: 1.5rem;
+    color: var(--pirate-gold);
+}
+
+.business-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.business-info h4 {
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--pirate-black) 0%, var(--rum-brown) 100%);
+    color: var(--skull-white);
+    padding: 3rem 0 1rem;
+    border-top: 3px solid var(--pirate-gold);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-brand h3 {
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-family: 'Pirata One', cursive;
+}
+
+.footer-brand p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    color: var(--pirate-gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Rum Raisin', cursive;
+}
+
+.footer-section a {
+    color: var(--skull-white);
+    text-decoration: none;
+    display: block;
+    padding: 0.3rem 0;
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: var(--pirate-gold);
+    transform: translateX(5px);
+}
+
+.footer-section p {
+    color: var(--skull-white);
+    opacity: 0.8;
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 215, 0, 0.3);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.social-footer-link {
+    color: var(--skull-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid var(--pirate-gold);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-footer-link:hover {
+    background: var(--pirate-gold);
+    color: var(--pirate-black);
+    transform: translateY(-2px);
+}
+
+.social-footer-link i {
+    font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes treasureGlow {
+    0%, 100% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.8);
+    }
+}
+
+@keyframes flagWave {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@keyframes skullBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes pizzaSpin {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+@keyframes menuBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes treasureShine {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--pirate-black);
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.mobile-active {
+        left: 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .highlight {
+        font-size: 3rem;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content,
+    .crypto-content,
+    .location-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .pizza-spotlight {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .hours-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .highlight {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .pizza-card {
+        padding: 1.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
